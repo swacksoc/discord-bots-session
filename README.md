@@ -16,7 +16,7 @@ On the same page you need to select the "Generate OAuth 2 URL" button and hope n
 
 ## Writing your Bot
 
-(Obligatory Ping -> Ping code)
+(Obligatory Ping -> Pong code)
 
 ## Next steps
 
