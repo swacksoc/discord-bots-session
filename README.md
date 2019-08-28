@@ -6,7 +6,7 @@ For these examples I shall be using Python but similar steps can be taken in Jav
 
 ## Setting up a Discord Bot
 
-As expected there are some hoops to jump through, not literally (I hate jumping), before you can get a Discord Bot up and running.  Firstly you need to sign into Discord and navigate to https://discordapp.com/developers/applications/me and hit the "New Application" button, from here you should give your bot a witty name and finally select "Create".
+As expected there are some hoops to jump through, not literally (I hate jumping), before you can get a Discord Bot up and running.  Firstly you need to sign into Discord and navigate to the [Discord Developers Page](https://discordapp.com/developers/applications/me) and hit the "New Application" button, from here you should give your bot a witty name and finally select "Create".
 
 After you've done this you need to scroll down and select "Add Bot User", this basically lets Discord know that you want to make a Bot and to provide the necessary stuff for you.
 
