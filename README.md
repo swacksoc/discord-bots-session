@@ -16,7 +16,23 @@ On the same page you need to select the "Generate OAuth 2 URL" button and hope n
 
 ## Writing your Bot
 
-(Obligatory Ping -> Pong code)
+Now, time to actually do something with your bot! For Python the easiest way to get started is to use the [discord.ext.commands](https://discordpy.readthedocs.io/en/latest/ext/commands/commands.html) framework of the [discord.py](https://discordpy.readthedocs.io/en/latest/index.html) API:
+
+```Python
+from discord.ext import commands
+
+TOKEN = "Your Discord API token here"
+
+# All your commands must start with this prefix for your bot to respond
+bot = commands.Bot(command_prefix='>')
+
+@bot.command()
+async def ping(ctx):
+    await ctx.send('pong')
+
+
+bot.run(TOKEN)
+```
 
 ## Next steps
 
