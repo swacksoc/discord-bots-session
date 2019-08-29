@@ -112,4 +112,4 @@ Feel free not to [build a bot in Java!](https://github.com/Javacord/Javacord)
 
 Although it is possible..
 
-![Don't do this!](https://github.com/swanhack/HackChallenge2/blob/master/Screenshot%202019-08-29%20at%2011.51.06%20pm.png)
+![Don't do this!](https://github.com/swanhack/Discord-Bots---Episode-10/blob/feature_x/SomethingWentWrong.png)
