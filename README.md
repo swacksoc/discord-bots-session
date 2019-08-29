@@ -4,6 +4,8 @@ Why Discord Bots?  Because they're cool, and actually they're really easy to do 
 
 For these examples I shall be using Python but similar steps can be taken in JavaScript and if you're feeling a particular kind of crazy .. Java, I use Java.
 
+This guide assumes you are using a UNIX or Linux environment on your own machine as not all lab machines have the necessary libraries and languages installed.
+
 ## Setting up a Discord Bot
 
 As expected there are some hoops to jump through, not literally (I hate jumping), before you can get a Discord Bot up and running.  Firstly you need to sign into Discord and navigate to the [Discord Developers Page](https://discordapp.com/developers/applications/me) and hit the "New Application" button, from here you should give your bot a witty name and finally select "Create".
@@ -18,6 +20,12 @@ On the same page you need to select the "Generate OAuth 2 URL" button and hope n
 
 Now, time to actually do something with your bot!  With Python the easiest way to get started is to use the [discord.ext.commands](https://discordpy.readthedocs.io/en/latest/ext/commands/commands.html) framework from the [discord.py](https://discordpy.readthedocs.io/en/latest/index.html) API.
 
+To install this library on your machine type the following into a terminal:
+
+```bash
+python3 -m pip install -U discord.py
+```
+
 Start with the boilerplate:
 
 ```Python
@@ -26,10 +34,10 @@ from discord.ext import commands
 # Because it acts like a password it is best practice to store your API token in an external text file
 TOKEN_FILE = open("/path/to/token", "r")
 TOKEN = TOKEN_FILE.read()
-OWNER_ID = # Change this to your USER_ID
+OWNER_ID = # your USER_ID, without quotes
 ```
 
-To get your USED_ID right click on your name in Discord and select "copy ID"
+To get your USER_ID right click on your name in Discord and select "copy ID", this will then allow you to paste it into your code.
 
 Your bot should only respond to messages from you, so add a check for this:
 
@@ -41,7 +49,7 @@ def isOwner(ctx):
     return commands.check(predicate)
 ```
 
-Now we can write some commands!  First though you shouldse up a character to start all your commands with.  In the following example, the `ping` command is run when you send ">ping".
+With this all setup we can now write some commands!  First though, to prevent accidental usage, you should set up a character to start all your commands with.  In the following example the `ping` command is run when you send ">ping".
 
 ```Python
 # All your commands must start with this prefix for your bot to respond
@@ -56,10 +64,16 @@ async def logout(ctx):
     await ctx.bot.logout()
 ```
 
-Finally, run your bot:
+Finally, some code to actually run your bot:
 
 ```Python    
 bot.run(TOKEN)
+```
+
+Now you should be able to start up your bot by typing the following into a terminal:
+
+```bash
+python3 your_file_name.py
 ```
 
 ## Next steps
