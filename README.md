@@ -1,10 +1,8 @@
 # Discord Bots - Episode 10
 
-Why Discord Bots?  Because they're cool, and actually they're really easy to do and can teach you a lot.  Most good languages already have libraries and APIs set up for Discord Bots which makes things super easy.
+Why Discord Bots?  Because they're cool, really easy to set up and can teach you a lot.  Most good languages already have libraries and APIs set up for Discord Bots which makes things super easy, with some practice you can get a Bot up and running in 5 minutes.
 
-For these examples I shall be using Python but similar steps can be taken in JavaScript and if you're feeling a particular kind of crazy .. Java, I use Java.
-
-This guide assumes you are using a UNIX or Linux environment on your own machine as not all lab machines have the necessary libraries and languages installed.
+For these examples I shall be using Python but similar steps can be taken in JavaScript and if you're feeling a particular kind of crazy .. Java, I use Java.  This guide also assumes you are using a UNIX or Linux environment and are using your own machine as not all lab machines have the necessary libraries and languages installed.
 
 ## Setting up a Discord Bot
 
@@ -16,6 +14,8 @@ After you've done this you need to scroll down and select "Add Bot User", this b
 
 On the same page you need to select the "Generate OAuth 2 URL" button and hope nothing bad happens.. With any luck this should generate a bunch of options for you to select what you want the Bot to be able to do.  In your case select "be a bot" and then get ready to Coffee Pasta the URL it spits out to a member of the Committee.
 
+Once this is complete you should see your bot online in the `#sandbox` channel of the swan_hack server.
+
 ## Writing your Bot
 
 Now, time to actually do something with your bot!  With Python the easiest way to get started is to use the [discord.ext.commands](https://discordpy.readthedocs.io/en/latest/ext/commands/commands.html) framework from the [discord.py](https://discordpy.readthedocs.io/en/latest/index.html) API.
@@ -26,7 +26,7 @@ To install this library on your machine type the following into a terminal:
 python3 -m pip install -U discord.py
 ```
 
-Start with the boilerplate:
+Now lets start writing your bot.. with everyone's favourite boilerplate:
 
 ```Python
 from discord.ext import commands
@@ -51,7 +51,7 @@ def isOwner(ctx):
     return commands.check(predicate)
 ```
 
-With this all setup we can now write some commands!  First though, to prevent accidental usage, you should set up a character to start all your commands with.  In the following example the `ping` command is run when you send ">ping".
+With this all setup we can finally start writing some commands!  First though, to prevent accidental usage, we recommend you set up a character to start all of your commands with.  In the following example the `ping` command is run when you send ">ping".
 
 ```Python
 # All your commands must start with this prefix for your bot to respond
@@ -75,7 +75,7 @@ bot.run(TOKEN)
 Now you should be able to start up your bot by typing the following into a terminal:
 
 ```bash
-python3 your_file_name.py
+python3 /path/to/file.py
 ```
 
 ## Next steps
@@ -89,6 +89,8 @@ python3 your_file_name.py
 
 ## Slightly harder next steps
 
+These challenges can take some time but are possible in most languages, including Java!
+
 * Write a function to create commands dynamically
   * For example "create test this is not a test" creates a command "test" which returns "this is not a test"
   * Write a function to remove dynamic commands
@@ -97,7 +99,17 @@ python3 your_file_name.py
   * Ideally these should not be cyclical (decrypting text and then encrypting it should not return the input)
 * Use a third party API to pull weather data for a given location
   * Have this command also output an image representing the weather conditions
-  * Reminder that some cities share names with other cities in another country so don't forget to also take in a country or region, for example Manchester,UK or Birmingham,US
+  * Reminder: Some cities share names with other cities in another country so don't forget to also take in a country or region, for example Manchester,UK or Birmingham,US
 * Now write a help function because you know you'll forget this nonsense!
 
-.. Something Something ..
+## Rules for having a bot on the swan_hack server
+
+For a list of rules your bot should follow please check the `#info` channel on the swan_hack server.
+
+## And for those who left their brain outside
+
+Feel free not to [build a bot in Java!](https://github.com/Javacord/Javacord)
+
+Although it is possible..
+
+![Don't do this!](https://github.com/swanhack/Discord-Bots---Episode-10/blob/feature_x/SomethingWentWrong.png)
