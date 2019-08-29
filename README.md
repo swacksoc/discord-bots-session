@@ -16,20 +16,22 @@ On the same page you need to select the "Generate OAuth 2 URL" button and hope n
 
 ## Writing your Bot
 
-Now, time to actually do something with your bot!  For Python the easiest way to get started is to use the [discord.ext.commands](https://discordpy.readthedocs.io/en/latest/ext/commands/commands.html) framework of the [discord.py](https://discordpy.readthedocs.io/en/latest/index.html) API.
+Now, time to actually do something with your bot!  With Python the easiest way to get started is to use the [discord.ext.commands](https://discordpy.readthedocs.io/en/latest/ext/commands/commands.html) framework from the [discord.py](https://discordpy.readthedocs.io/en/latest/index.html) API.
 
 Start with the boilerplate:
 
 ```Python
 from discord.ext import commands
 
-# It is best practice to store your API token in an external text file
+# Because it acts like a password it is best practice to store your API token in an external text file
 TOKEN_FILE = open("/path/to/token", "r")
 TOKEN = TOKEN_FILE.read()
-OWNER_ID = # Your user ID here
+OWNER_ID = # Change this to your USER_ID
 ```
 
-Your bot should only respond to messages from you, so add a check:
+To get your USED_ID right click on your name in Discord and select "copy ID"
+
+Your bot should only respond to messages from you, so add a check for this:
 
 ```Python
 @bot.check
@@ -39,7 +41,7 @@ def isOwner(ctx):
     return commands.check(predicate)
 ```
 
-Now, write some commands.  You need to choose a character to start all your commands with. In the following example, the `ping` command is run when you send ">ping".
+Now we can write some commands!  First though you shouldse up a character to start all your commands with.  In the following example, the `ping` command is run when you send ">ping".
 
 ```Python
 # All your commands must start with this prefix for your bot to respond
@@ -55,18 +57,19 @@ async def logout(ctx):
 ```
 
 Finally, run your bot:
+
 ```Python    
 bot.run(TOKEN)
 ```
 
 ## Next steps
 
-* Prevent your Bot from replying to itself!  Spam has been known to occur!
+* Prevent your Bot from replying to itself, spam has been known to occur!
 * Write a method that can reverse an input, for example "Something!" -> "!gnihtemoS"
 * Write a method than returns the total number of users on the server
   * Make this output display how many are bots and how many are actively online
 * Write a function to count and output the total number of times a word has been said
-* Write a function to sort a list of things
+* Write a function to sort a list of numbers
 
 ## Slightly harder next steps
 
@@ -82,5 +85,3 @@ bot.run(TOKEN)
 * Now write a help function because you know you'll forget this nonsense!
 
 .. Something Something ..
-
-.. More something .. because commit errors .. maybe
