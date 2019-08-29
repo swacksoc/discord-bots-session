@@ -61,6 +61,7 @@ bot.run(TOKEN)
 
 ## Next steps
 
+* Prevent your Bot from replying to itself!  Spam has been known to occur!
 * Write a method that can reverse an input, for example "Something!" -> "!gnihtemoS"
 * Write a method than returns the total number of users on the server
   * Make this output display how many are bots and how many are actively online
