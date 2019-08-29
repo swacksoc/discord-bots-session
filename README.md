@@ -23,9 +23,14 @@ On the same page you need to select the "Generate OAuth 2 URL" button and hope n
 * Write a method that can reverse an input, for example "Something!" -> "!gnihtemoS"
 * Write a method than returns the total number of users on the server
   * Make this output display how many are bots and how many are actively online
-* Use a third party API to pull weather data for a given location
+* Write a function to count and output the total number of times a word has been said
 * Write a function to create and commands dynamically
   * For example "create test this is not a test" creates a command "test" which returns "this is not a test"
 * Write a function to remove dynamic commands
+* Write a function to encrypt an input like Enigma
+  * Write a function to decrypt the output back to the input
+  * Ideally these should not be cyclical (decrypting text and then encrypting it should not return the input)
+* Use a third party API to pull weather data for a given location
+* Now write a help function because you know you'll forget this nonsense!
 
 .. Something Something ..
