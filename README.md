@@ -25,7 +25,7 @@ from discord.ext import commands
 
 # It is best practice to store your API token in an external text file
 tokenFile = open("/path/to/token", "r")
-TOKEN = tokenFile.read()
+TOKEN = tokenFile.read().rstrip()
 OWNER_ID = # Your user ID here
 tokenFile.close()
 ```
