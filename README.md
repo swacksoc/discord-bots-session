@@ -14,7 +14,7 @@ After you've done this you need to scroll down and select "Add Bot User", this b
 
 On the same page you need to select the "Generate OAuth 2 URL" button and hope nothing bad happens.. With any luck this should generate a bunch of options for you to select what you want the Bot to be able to do.  In your case select "be a bot" and then get ready to Coffee Pasta the URL it spits out to a member of the Committee.
 
-Once this is done you should see your bot online in the `#sandbox` channel of the swan_hack server.
+Once this is complete you should see your bot online in the `#sandbox` channel of the swan_hack server.
 
 ## Writing your Bot
 
@@ -101,3 +101,15 @@ These challenges can take some time but are possible in most languages, includin
   * Have this command also output an image representing the weather conditions
   * Reminder: Some cities share names with other cities in another country so don't forget to also take in a country or region, for example Manchester,UK or Birmingham,US
 * Now write a help function because you know you'll forget this nonsense!
+
+## Rules for having a bot on the swan_hack server
+
+For a list of rules your bot should follow please check the `#info` channel on the swan_hack server.
+
+## And for those who left their brain outside
+
+Feel free not to [build a bot in Java!](https://github.com/Javacord/Javacord)
+
+Although it is possible..
+
+.. IMAGES .. maybe ..
