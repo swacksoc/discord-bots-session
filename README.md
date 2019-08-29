@@ -16,7 +16,7 @@ On the same page you need to select the "Generate OAuth 2 URL" button and hope n
 
 ## Writing your Bot
 
-Now, time to actually do something with your bot! For Python the easiest way to get started is to use the [discord.ext.commands](https://discordpy.readthedocs.io/en/latest/ext/commands/commands.html) framework of the [discord.py](https://discordpy.readthedocs.io/en/latest/index.html) API.
+Now, time to actually do something with your bot!  For Python the easiest way to get started is to use the [discord.ext.commands](https://discordpy.readthedocs.io/en/latest/ext/commands/commands.html) framework of the [discord.py](https://discordpy.readthedocs.io/en/latest/index.html) API.
 
 Start with the boilerplate:
 
@@ -39,7 +39,7 @@ def isOwner(ctx):
     return commands.check(predicate)
 ```
 
-Now, write some commands. You need to choose a character to start all your commands with. In the following example, the `ping` command is run when you send ">ping".
+Now, write some commands.  You need to choose a character to start all your commands with. In the following example, the `ping` command is run when you send ">ping".
 
 ```Python
 # All your commands must start with this prefix for your bot to respond
@@ -65,13 +65,19 @@ bot.run(TOKEN)
 * Write a method than returns the total number of users on the server
   * Make this output display how many are bots and how many are actively online
 * Write a function to count and output the total number of times a word has been said
-* Write a function to create and commands dynamically
+* Write a function to sort a list of things
+
+## Slightly harder next steps
+
+* Write a function to create commands dynamically
   * For example "create test this is not a test" creates a command "test" which returns "this is not a test"
-* Write a function to remove dynamic commands
+  * Write a function to remove dynamic commands
 * Write a function to encrypt an input like Enigma
   * Write a function to decrypt the output back to the input
   * Ideally these should not be cyclical (decrypting text and then encrypting it should not return the input)
 * Use a third party API to pull weather data for a given location
+  * Have this command also output an image representing the weather conditions
+  * Reminder that some cities share names with other cities in another country so don't forget to also take in a country or region, for example Manchester,UK or Birmingham,US
 * Now write a help function because you know you'll forget this nonsense!
 
 .. Something Something ..
