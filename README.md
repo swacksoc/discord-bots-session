@@ -75,7 +75,7 @@ bot.run(TOKEN)
 Now you should be able to start up your bot by typing the following into a terminal:
 
 ```bash
-python3 your_file_name.py
+python3 /path/to/file.py
 ```
 
 ## Next steps
