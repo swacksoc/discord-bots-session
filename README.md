@@ -38,18 +38,22 @@ TOKEN = TOKEN_FILE.read()
 
 To get your USER_ID right click on your name in Discord and select "copy ID", this will then allow you to paste it into your code.
 
-Your bot should only respond to messages from you, so add a check for this:
+First, to prevent accidental usage, we recommend you set up a character to start all of your commands with:
+
+```Python
+# All your commands must start with this prefix for your bot to respond
+bot = commands.Bot(command_prefix='>')
+```
+
+Secondly, to prevent spam, your bot should only respond to messages from you, so add a check for this:
 
 ```Python
 bot.owner_id = # your USER_ID
 ```
 
-With this all setup we can finally start writing some commands!  First though, to prevent accidental usage, we recommend you set up a character to start all of your commands with.  In the following example the `ping` command is run when you send ">ping".
+With this all setup we can finally start writing some commands!   In the following example the `ping` command is run when you send ">ping".
 
 ```Python
-# All your commands must start with this prefix for your bot to respond
-bot = commands.Bot(command_prefix='>')
-
 @commands.is_owner()
 @bot.command()
 async def ping(ctx):
@@ -107,4 +111,4 @@ Feel free not to [build a bot in Java!](https://github.com/Javacord/Javacord)
 
 Although it is possible..
 
-![Don't do this!](https://github.com/swanhack/Discord-Bots---Episode-10/blob/feature_x/SomethingWentWrong.png)
+![Don't do this!](https://github.com/swanhack/Discord-Bots---Episode-10/blob/master/SomethingWentWrong.png)
