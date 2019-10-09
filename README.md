@@ -36,8 +36,6 @@ TOKEN_FILE = open("/path/to/token", "r")
 TOKEN = TOKEN_FILE.read()
 ```
 
-To get your USER_ID right click on your name in Discord and select "copy ID", this will then allow you to paste it into your code.
-
 First, to prevent accidental usage, we recommend you set up a character to start all of your commands with:
 
 ```Python
@@ -50,6 +48,8 @@ Secondly, to prevent spam, your bot should only respond to messages from you, so
 ```Python
 bot.owner_id = # your USER_ID
 ```
+
+To get your USER_ID right click on your name in Discord and select "copy ID", this will then allow you to paste it into your code.
 
 With this all setup we can finally start writing some commands!   In the following example the `ping` command is run when you send ">ping".
 
