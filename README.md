@@ -34,19 +34,21 @@ from discord.ext import commands
 # Because it acts like a password it is best practice to store your API token in an external text file
 TOKEN_FILE = open("/path/to/token", "r")
 TOKEN = TOKEN_FILE.read()
-
 ```
 
 To get your USER_ID right click on your name in Discord and select "copy ID", this will then allow you to paste it into your code.
 
 Your bot should only respond to messages from you, so add a check for this:
 
+```Python
+bot.owner_id = # your USER_ID
+```
+
 With this all setup we can finally start writing some commands!  First though, to prevent accidental usage, we recommend you set up a character to start all of your commands with.  In the following example the `ping` command is run when you send ">ping".
 
 ```Python
 # All your commands must start with this prefix for your bot to respond
 bot = commands.Bot(command_prefix='>')
-bot.owner_id = # your USER_ID
 
 @commands.is_owner()
 @bot.command()
@@ -61,7 +63,7 @@ async def logout(ctx):
 
 Finally, some code to actually run your bot:
 
-```Python    
+```Python
 bot.run(TOKEN)
 ```
 
