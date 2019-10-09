@@ -34,7 +34,6 @@ from discord.ext import commands
 # Because it acts like a password it is best practice to store your API token in an external text file
 TOKEN_FILE = open("/path/to/token", "r")
 TOKEN = TOKEN_FILE.read()
-OWNER_ID = # your USER_ID, without quotes
 
 ```
 
@@ -42,25 +41,19 @@ To get your USER_ID right click on your name in Discord and select "copy ID", th
 
 Your bot should only respond to messages from you, so add a check for this:
 
-```Python
-# NOTE THIS DOESN'T WORK!!!
-@bot.check
-def isOwner(ctx):
-    async def predicate(ctx):
-        return ctx.author.id == OWNER_ID
-    return commands.check(predicate)
-```
-
 With this all setup we can finally start writing some commands!  First though, to prevent accidental usage, we recommend you set up a character to start all of your commands with.  In the following example the `ping` command is run when you send ">ping".
 
 ```Python
 # All your commands must start with this prefix for your bot to respond
 bot = commands.Bot(command_prefix='>')
+bot.owner_id = # your USER_ID
 
+@commands.is_owner()
 @bot.command()
 async def ping(ctx):
     await ctx.send('pong')
 
+@commands.is_owner()
 @bot.command()
 async def logout(ctx):
     await ctx.bot.logout()
