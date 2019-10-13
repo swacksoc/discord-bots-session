@@ -98,7 +98,7 @@ These challenges can take some time but are possible in most languages, includin
   * Ideally these should not be cyclical (decrypting text and then encrypting it should not return the input)
 * Use a third party API to pull weather data for a given location
   * Have this command also output an image representing the weather conditions
-  * Reminder: Some cities share names with other cities in another country so don't forget to also take in a country or region, for example Manchester,UK or Birmingham,US
+  * Reminder: Some cities share names with other cities in another country so don't forget to also take in a country or region, for example [Swansea,US](https://en.wikipedia.org/wiki/Swansea,_Massachusetts)
 * Now write a help function because you know you'll forget this nonsense!
 
 ## Rules for having a bot on the swan_hack server
