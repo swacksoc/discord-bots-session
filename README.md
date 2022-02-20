@@ -12,10 +12,10 @@ Before you can get to programming, we need to create and register your bot with 
   3. Your application should appear in the "My Applications" list. Open it up, go to the "Bot" page, and click "Add Bot".
   4. Right below the username, you will see your "API" token. Make sure you ~~share that with everybody~~ keep it concealed! This is your "password" to the bot.
   5. Go to the "OAuth2 -> URL Generator" section
-    - Here, we will generate the link that will let me add your bot to our server, or any server for that matter.
-    - You first define the "scope" of the bot, for this you just need "Bot"
-    - You must then define what the bot needs access to. For this basic one, it simply needs "Read Messages/View Channels" and "Send Messages"
-    - After you ticked all the boxes, copy the url from the "Generated URL" field, and save it.
+     - Here, we will generate the link that will let me add your bot to our server, or any server for that matter.
+     - You first define the "scope" of the bot, for this you just need "Bot"
+     - You must then define what the bot needs access to. For this basic one, it simply needs "Read Messages/View Channels" and "Send Messages"
+     - After you ticked all the boxes, copy the url from the "Generated URL" field, and save it.
   6. Send the generated URL above to meetowl#3690 (me), I will then notify you when I've added the bot. You should see the bot in the right pane of the `#sandbox` text channel.
 
 ## Writing your Bot
