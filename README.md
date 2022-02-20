@@ -34,7 +34,7 @@ Now for the fun part, actually making the bot do something!
 
 ### Basic Example 
 
-Let's take apart the following example from [the official quickstart guide](https://docs.pycord.dev/en/master/quickstart.html). 
+Let's take apart the following modified example from [the official quickstart guide](https://docs.pycord.dev/en/master/quickstart.html). 
 ```Python
 # Import the pycord library into your runtime. 
 import discord
@@ -69,56 +69,65 @@ py firstbot.py
 
 Try sending $hello in `#sandbox`!
 
-### blah
+### Important Mechanisms
+The basic example had a simple response to a simple message. This is nice, but we'd like to make it do something more useful. The following sections go over some of the important mechanisms in the Pycord API.
 
+#### Safety 
+The bot's `on_message` function activates on _every_ message, including those from other bots and itself. It's best to design precautions of this into the start of the function.
+
+To stop execution if the message came from the bot itself:
 ```Python
-from discord.ext import commands
-
-# Because it acts like a password it is best practice to store your API token in an external text file
-TOKEN_FILE = open("/path/to/token", "r")
-TOKEN = TOKEN_FILE.read()
+if message.author == client.user:
+    return
 ```
 
-First, to prevent accidental usage, we recommend you set up a character to start all of your commands with:
-
+Or, to stop execution if the message came from another bot:
 ```Python
-# All your commands must start with this prefix for your bot to respond
-bot = commands.Bot(command_prefix='>')
+if message.author.bot:
+    return
 ```
 
-Secondly, to prevent spam, your bot should only respond to messages from you, so add a check for this:
+#### Messages
+Every message the bot receives, goes through the `on_message` function. This includes channel messages and DMs. 
 
+The message is represented with a Message object. You can access important information and perform function with that object, including:
+  * Content string with `content`
+  * User object with `author`
+  * Creation time/date with `created_at`
+  * Others documented [here](https://docs.pycord.dev/en/master/api.html#message)
+  
+For example, if you wanted to print a message if a user with a specific name messaged it:
 ```Python
-bot.owner_id = # your USER_ID
+if message.author.name == 'meetowl':
+    print('ughh my boss is bugging me again')
 ```
 
-To get your USER_ID right click on your name in Discord and select "copy ID", this will then allow you to paste it into your code.
-
-With this all setup we can finally start writing some commands!   In the following example the `ping` command is run when you send ">ping".
-
+If you then wanted to reply to that message:
 ```Python
-@commands.is_owner()
-@bot.command()
-async def ping(ctx):
-    await ctx.send('pong')
-
-@commands.is_owner()
-@bot.command()
-async def logout(ctx):
-    await ctx.bot.logout()
+await message.reply('Hey Boss, I'm still working on those reports.')
 ```
 
-Finally, some code to actually run your bot:
+Or send a new message to the channel of that message:
+```Python 
+await message.channel.send('Working hard or hardly working?')
+```
 
+Or do something only if the message matches a specific string:
 ```Python
-bot.run(TOKEN)
+if message.content == 'I need you to work overtime':
+    await message.reply('I quit')
+    
+if message.content == 'I've got pizza, how about some overtime?':
+    await message.reply('You don't pay me enough to eat so I'm forced to do overtime.')
 ```
 
-Now you should be able to start up your bot by typing the following into a terminal:
 
-```bash
-python3 /path/to/file.py
-```
+
+  
+
+
+
+
 
 ## Next steps
 
