@@ -81,7 +81,7 @@ if message.author == client.user:
     return
 ```
 
-Or, to stop execution if the message came from another bot:
+Or, to stop execution if the message came from a bot (including itself):
 ```Python
 if message.author.bot:
     return
@@ -121,10 +121,39 @@ if message.content == 'I've got pizza, how about some overtime?':
     await message.reply('You don't pay me enough to eat so I'm forced to do overtime.')
 ```
 
+You can find a runnable example with all of this [here](https://github.com/swanhack/discord-bots-session/blob/revamp/examples/Message.py).
 
+#### Python Strings
+You don't want to be hardcoding messages like above. You can use Python's strings to make it much more useful and flexible. You can take a quick look at an overview of Python strings [here](https://www.w3schools.com/python/python_strings.asp), and the full list of functions on strings [here](https://www.w3schools.com/python/python_ref_string.asp).
 
-  
+If you want to only act on messages that start with a specific string:
+```Python
+if message.content.startswith('!time'):
+    date_time_now = datetime.now()
+    await message.channel.send(datetime_now)
+```
 
+If you want to only act on messages that contains a specific string:
+```Python
+if 'burger king' in message.content:
+    await message.reply('Don't say that around me.')
+```
+
+If you want to split a string into words (seperated by spaces), and iterate through all of them:
+```Python
+splitMsg = message.content.split(' ')
+for word in splitMsg:
+    print(f'{word}')
+```
+
+You may also find array slicing useful for the last one. To only work on all but the first word, use splitMsg[1:], which translates to a new array, that contains all elements from 1:
+```Python
+splitMsg = message.content.split(' ')
+for word in splitMsg[1:]:
+    print(f'{word}')
+```
+
+There are many more things you can do with strings. A runnable example of the above can be found [here](https://github.com/swanhack/discord-bots-session/blob/main/examples/String.py).
 
 
 

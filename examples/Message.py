@@ -3,7 +3,9 @@ import discord
 
 client = discord.Client()
 
-USERNAME = 'meetowl'
+# Make sure to replace this with your username
+USERNAME = '<YOUR_USERNAME>'
+
 @client.event
 async def on_ready():
     print(f'We have logged in as {client.user}')
