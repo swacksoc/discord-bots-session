@@ -1,20 +1,22 @@
-# Discord Bots - Episode 10
+# Discord Bots!
 
-Why Discord Bots?  Because they're cool, really easy to set up and can teach you a lot.  Most good languages already have libraries and APIs set up for Discord Bots which makes things super easy, with some practice you can get a Bot up and running in 5 minutes.
+Welcome to our Discord Bots session! This session aims to get you to become more comfortable with how discord bots work, and allow you to make one for yourselves.
 
-For these examples I shall be using Python but similar steps can be taken in JavaScript and if you're feeling a particular kind of crazy .. Java, I use Java.  This guide also assumes you are using a UNIX or Linux environment and are using your own machine as not all lab machines have the necessary libraries and languages installed.
+For those already comfortable, please skip to the final section where we~~can use you for free labour~~ have some challenges for you!
 
 ## Setting up a Discord Bot
 
-As expected there are some hoops to jump through, not literally (I hate jumping), before you can get a Discord Bot up and running.  Firstly you need to sign into Discord and navigate to the [Discord Developers Page](https://discordapp.com/developers/applications/me) and hit the "New Application" button, from here you should give your bot a witty name and finally select "Create".
-
-After you've done this you need to scroll down and select "Add Bot User", this basically lets Discord know that you want to make a Bot and to provide the necessary stuff for you.
-
-## Getting your Bot onto the swan_hack server
-
-On the same page you need to select the "Generate OAuth 2 URL" button and hope nothing bad happens.. With any luck this should generate a bunch of options for you to select what you want the Bot to be able to do.  In your case select "be a bot" and then get ready to Coffee Pasta the URL it spits out to a member of the Committee.
-
-Once this is complete you should see your bot online in the `#sandbox` channel of the swan_hack server.
+Before you can get to programming, we need to create and register your bot with the swan_hack server. 
+    1. Open up the [Discord Developers Page](https://discordapp.com/developers/applications/me)
+    2. Create a new application with the top-left "New Application" button. Call it something silly.
+    3. Your application should appear in the "My Applications" list. Open it up, go to the "Bot" page, and click "Add Bot".
+    4. Right below the username, you will see your "API" token. Make sure you ~~share that with everybody~~ keep it concealed! This is your "password" to the bot.
+    5. Go to the "OAuth2 -> URL Generator" section
+       - Here, we will generate the link that will let me add your bot to our server, or any server for that matter.
+       - You first define the "scope" of the bot, for this you just need "Bot"
+       - You must then define what the bot needs access to. For this basic one, it simply needs "Read Messages/View Channels" and "Send Messages"
+       - After you ticked all the boxes, copy the url from the "Generated URL" field, and save it.
+    6. Send the generated URL above to meetowl#3690 (me), I will then notify you when I've added the bot. You should see the bot in the right pane of the `#sandbox` text channel.
 
 ## Writing your Bot
 
@@ -112,3 +114,8 @@ Feel free not to [build a bot in Java!](https://github.com/Javacord/Javacord)
 Although it is possible..
 
 ![Don't do this!](https://github.com/swanhack/Discord-Bots---Episode-10/blob/master/SomethingWentWrong.png)
+
+# Resources
+
+Resources used and suggested
+    - [OFficial guide](https://docs.pycord.dev/en/master/quickstart.html)
