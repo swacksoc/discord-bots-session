@@ -30,26 +30,46 @@ You will need:
 
 ## Writing your bot
 
-Now for the fun part. Let's take apart an example from [the official quickstart guide](https://docs.pycord.dev/en/master/quickstart.html).
+Now for the fun part, actually making the bot do something!
+
+### Basic Example 
+
+Let's take apart the following example from [the official quickstart guide](https://docs.pycord.dev/en/master/quickstart.html). 
 ```Python
+# Import the pycord library into your runtime. 
 import discord
 
+# Assign the discord client to an object, we call client.
+# All discord actions will act on this variable.
 client = discord.Client()
 
+# This is a function.
+# It executes whenever the bot has succesfully initialised. 
+# In this case, it simply prints "We have logged in ..." to the terminal.
 @client.event
 async def on_ready():
     print(f'We have logged in as {client.user}')
 
+# This function executes whenever the bot has received a new message.
+# This can be a DM or a message in a channel that the bot can see.
 @client.event
 async def on_message(message):
-    if message.author == client.user:
-        return
-
+    # If the message starts with $hello, respond with Hello!
     if message.content.startswith('$hello'):
         await message.channel.send('Hello!')
 
-client.run(<YOUR_API_TOKEN>')
+# Required to run the bot, make sure to replace <YOUR_API_TOKEN>!
+client.run('<YOUR_API_TOKEN>')
 ```
+
+Chuck the above into your text editor, replace `<YOUR_API_TOKEN>` with the token (password) saved earlier, and save it to disk as "firstbot.py". Now, enter the following into a command line or terminal window to run the bot:
+```
+py firstbot.py
+```
+
+Try sending $hello in `#sandbox`!
+
+### blah
 
 ```Python
 from discord.ext import commands
