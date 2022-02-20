@@ -4,9 +4,9 @@ Welcome to our Discord Bots session! This session aims to get you to become more
 
 For those already comfortable, please skip to the final section where we~~can use you for free labour~~ have some challenges for you!
 
-## Setting up a Discord Bot
+## Setting up the bot
 
-Before you can get to programming, we need to create and register your bot with the swan_hack server. 
+To begin, need to create and register your bot with the swan_hack server. 
   1. Open up the [Discord Developers Page](https://discordapp.com/developers/applications/me)
   2. Create a new application with the top-left "New Application" button. Call it something silly.
   3. Your application should appear in the "My Applications" list. Open it up, go to the "Bot" page, and click "Add Bot".
@@ -18,17 +18,38 @@ Before you can get to programming, we need to create and register your bot with 
      - After you ticked all the boxes, copy the url from the "Generated URL" field, and save it.
   6. Send the generated URL above to meetowl#3690 (me), I will then notify you when I've added the bot. You should see the bot in the right pane of the `#sandbox` text channel.
 
-## Writing your Bot
+## Setting up your environment
 
-Now, time to actually do something with your bot!  With Python the easiest way to get started is to use the [discord.ext.commands](https://discordpy.readthedocs.io/en/latest/ext/commands/commands.html) framework from the [discord.py](https://discordpy.readthedocs.io/en/latest/index.html) API.
+Before you can get to programming, you actually need something to do it with. We will be using Python 3 with the [Pycord library](https://pycord.dev/), but don't get intimidated if you're not familiar, that's the point of this session!
 
-To install this library on your machine type the following into a terminal:
+You will need:
+  - A text editor. A commonly suggested one is [Visual Studio Code](https://code.visualstudio.com/), but it really doesn't matter as long as you're comfortable with it. You can use windows notepad, if you're into that kind of thing.
+  - Python 3. We will only touch what we need in python, the rest is up to you. Follow the installation documents [here](https://wiki.python.org/moin/BeginnersGuide/Download).
+  - The Pycord library. Once you've installed python, follow [this page](https://docs.pycord.dev/en/master/installing.html) to get it installed. Should be as easy as entering `py -3 -m pip install -U py-cord` in the command prompt.
+  - Once you have everything above, you should be ready to go!
 
-```bash
-python3 -m pip install -U discord.py
+## Writing your bot
+
+Now for the fun part. Let's take apart an example from [the official quickstart guide](https://docs.pycord.dev/en/master/quickstart.html).
+```Python
+import discord
+
+client = discord.Client()
+
+@client.event
+async def on_ready():
+    print(f'We have logged in as {client.user}')
+
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+
+    if message.content.startswith('$hello'):
+        await message.channel.send('Hello!')
+
+client.run(<YOUR_API_TOKEN>')
 ```
-
-Now lets start writing your bot.. with everyone's favourite boilerplate:
 
 ```Python
 from discord.ext import commands
