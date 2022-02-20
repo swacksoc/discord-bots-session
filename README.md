@@ -121,7 +121,7 @@ if message.content == 'I've got pizza, how about some overtime?':
     await message.reply('You don't pay me enough to eat so I'm forced to do overtime.')
 ```
 
-You can find a runnable example with all of this [here](https://github.com/swanhack/discord-bots-session/blob/revamp/examples/Message.py).
+You can find a runnable example with all of this [here](https://github.com/swanhack/discord-bots-session/blob/main/examples/Message.py).
 
 #### Python Strings
 You don't want to be hardcoding messages like above. You can use Python's strings to make it much more useful and flexible. You can take a quick look at an overview of Python strings [here](https://www.w3schools.com/python/python_strings.asp), and the full list of functions on strings [here](https://www.w3schools.com/python/python_ref_string.asp).
@@ -155,46 +155,43 @@ for word in splitMsg[1:]:
 
 There are many more things you can do with strings. A runnable example of the above can be found [here](https://github.com/swanhack/discord-bots-session/blob/main/examples/String.py).
 
-
-
-
+### General tips
+  * Always put await before a discord API call. This is due to how the API works.
+  * Have a seperate file for your bot API so you don't accidentally share it. We have it in the source file here for simplicity.
+  * Python is full of APIs and is often referred to as a "glue language", so don't be afraid to use other APIs with your discord bot!
+  * Take a look at the developer portal again, and see how many more permissions the bot can have. Those are all things that the bot can have control over.
 ## Next steps
+  * Write a method that can reverse an input, for example "Something!" -> "!gnihtemoS"
+  * Write a function to count and output the total number of times a word has been said
+  * Write a function to sort a list of numbers
 
-* Prevent your Bot from replying to itself, spam has been known to occur!
-* Write a method that can reverse an input, for example "Something!" -> "!gnihtemoS"
-* Write a method than returns the total number of users on the server
-  * Make this output display how many are bots and how many are actively online
-* Write a function to count and output the total number of times a word has been said
-* Write a function to sort a list of numbers
-
-## Slightly harder next steps
+## Harder next steps
 
 These challenges can take some time but are possible in most languages, including Java!
 
-* Write a function to create commands dynamically
-  * For example "create test this is not a test" creates a command "test" which returns "this is not a test"
-  * Write a function to remove dynamic commands
-* Write a function to encrypt an input like Enigma
-  * Write a function to decrypt the output back to the input
-  * Ideally these should not be cyclical (decrypting text and then encrypting it should not return the input)
-* Use a third party API to pull weather data for a given location
-  * Have this command also output an image representing the weather conditions
-  * Reminder: Some cities share names with other cities in another country so don't forget to also take in a country or region, for example [Swansea,US](https://en.wikipedia.org/wiki/Swansea,_Massachusetts)
-* Now write a help function because you know you'll forget this nonsense!
+  * Write a function to create commands dynamically
+    * For example "create test this is not a test" creates a command "test" which returns "this is not a test"
+    * Write a function to remove dynamic commands
+  * Write a function to encrypt an input like Enigma
+    * Write a function to decrypt the output back to the input
+    * Ideally these should not be cyclical (decrypting text and then encrypting it should not return the input)
+  * Use a third party API to pull weather data for a given location
+    * Have this command also output an image representing the weather conditions
+    * Reminder: Some cities share names with other cities in another country so don't forget to also take in a country or region, for example [Swansea,US](https://en.wikipedia.org/wiki/Swansea,_Massachusetts)
+  * Now write a help function because you know you'll forget this nonsense!
 
-## Rules for having a bot on the swan_hack server
+## Contributions to swan_hack
+We currently have need for two bots that I can't find the time to write. If you want to get started / improve your GitHub portfolio, or just want to build something that will be used with discord bots, we encourage you to try solving these two issues:
+  * Bot that can manage channels within a category. Specifically for our Miscellaneous category.
+  * Bot that combines all messages from a channel, within a date range, into a text, PDF, DOCX or other file. For a small event we want to run. 
 
-For a list of rules your bot should follow please check the `#info` channel on the swan_hack server.
 
-## And for those who left their brain outside
-
-Feel free not to [build a bot in Java!](https://github.com/Javacord/Javacord)
-
-Although it is possible..
-
-![Don't do this!](https://github.com/swanhack/Discord-Bots---Episode-10/blob/master/SomethingWentWrong.png)
 
 # Resources
 
 Resources used and suggested
-    - [OFficial guide](https://docs.pycord.dev/en/master/quickstart.html)
+  * [Pycord library](https://pycord.dev/)
+  * [Official Pycord documentation](https://docs.pycord.dev/en/master/quickstart.html)
+  * [Python installation guide](https://wiki.python.org/moin/BeginnersGuide/Download)
+  * [Python Strings tutorial](https://www.w3schools.com/python/python_strings.asp)
+  * [Python Strings methods](https://www.w3schools.com/python/python_ref_string.asp)
