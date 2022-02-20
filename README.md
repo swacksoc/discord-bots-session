@@ -44,7 +44,7 @@ import discord
 client = discord.Client()
 
 # This is a function.
-# It executes whenever the bot has succesfully initialised. 
+# It executes whenever the bot has successfully initialised. 
 # In this case, it simply prints "We have logged in ..." to the terminal.
 @client.event
 async def on_ready():
@@ -139,7 +139,7 @@ if 'burger king' in message.content:
     await message.reply('Don't say that around me.')
 ```
 
-If you want to split a string into words (seperated by spaces), and iterate through all of them:
+If you want to split a string into words (separated by spaces), and iterate through all of them:
 ```Python
 splitMsg = message.content.split(' ')
 for word in splitMsg:
@@ -156,8 +156,8 @@ for word in splitMsg[1:]:
 There are many more things you can do with strings. A runnable example of the above can be found [here](https://github.com/swanhack/discord-bots-session/blob/main/examples/String.py).
 
 ### General tips
-  * Always put await before a discord API call. This is due to how the API works.
-  * Have a seperate file for your bot API so you don't accidentally share it. We have it in the source file here for simplicity.
+  * Always put `await` before a discord API call. This is due to how the API works.
+  * Have a separate file for your bot API so you don't accidentally share it. We have it in the source file here for simplicity.
   * Python is full of APIs and is often referred to as a "glue language", so don't be afraid to use other APIs with your discord bot!
   * Take a look at the developer portal again, and see how many more permissions the bot can have. Those are all things that the bot can have control over.
 ## Next steps
