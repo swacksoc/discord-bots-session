@@ -2,7 +2,7 @@
 
 Welcome to our Discord Bots session! This session aims to get you to become more comfortable with how discord bots work, and allow you to make one for yourselves.
 
-For those already comfortable, please skip to the final section where we~~can use you for free labour~~ have some challenges for you!
+For those already comfortable, please skip to the final section where we ~~can use you for free labour~~ have some challenges for you!
 
 ## Setting up the bot
 
@@ -25,7 +25,7 @@ Before you can get to programming, you actually need something to do it with. We
 You will need:
   - A text editor. A commonly suggested one is [Visual Studio Code](https://code.visualstudio.com/), but it really doesn't matter as long as you're comfortable with it. You can use windows notepad, if you're into that kind of thing.
   - Python 3. We will only touch what we need in python, the rest is up to you. Follow the installation documents [here](https://wiki.python.org/moin/BeginnersGuide/Download).
-  - The Pycord library. Once you've installed python, follow [this page](https://docs.pycord.dev/en/master/installing.html) to get it installed. Should be as easy as entering `py -3 -m pip install -U py-cord` in the command prompt.
+  - The Pycord library. Once you've installed python, follow [this page](https://docs.pycord.dev/en/master/installing.html) to get it installed. Should be as easy as entering `py -3 -m pip install -U py-cord` in Windows, or `python3 -m pip install -U py-cord` in others.
   - Once you have everything above, you should be ready to go!
 
 ## Writing your bot
@@ -48,24 +48,33 @@ client = discord.Client()
 # In this case, it simply prints "We have logged in ..." to the terminal.
 @client.event
 async def on_ready():
-    print(f'We have logged in as {client.user}')
+    print(f"We have logged in as {client.user}")
 
 # This function executes whenever the bot has received a new message.
 # This can be a DM or a message in a channel that the bot can see.
 @client.event
 async def on_message(message):
     # If the message starts with $hello, respond with Hello!
-    if message.content.startswith('$hello'):
-        await message.channel.send('Hello!')
+    if message.content.startswith("$hello"):
+        await message.channel.send("Hello!")
 
 # Required to run the bot, make sure to replace <YOUR_API_TOKEN>!
-client.run('<YOUR_API_TOKEN>')
+client.run("<YOUR_API_TOKEN>")
+
+# (we actually recommend you store your token in a file, so that if you ever publish your code you won't publish the token)
 ```
 
-Chuck the above into your text editor, replace `<YOUR_API_TOKEN>` with the token (password) saved earlier, and save it to disk as "firstbot.py". Now, enter the following into a command line or terminal window to run the bot:
-```
-py firstbot.py
-```
+Chuck the above into your text editor, replace `<YOUR_API_TOKEN>` with the token (password) saved earlier, and save it to disk as "firstbot.py". 
+
+Now to run your program, execute the following command:
+  * For Windows:
+    ```
+    py firstbot.py
+    ```
+  * For others
+    ```
+    python firstbot.py
+    ```
 
 Try sending $hello in `#sandbox`!
 
@@ -98,27 +107,27 @@ The message is represented with a Message object. You can access important infor
   
 For example, if you wanted to print a message if a user with a specific name messaged it:
 ```Python
-if message.author.name == 'meetowl':
-    print('ughh my boss is bugging me again')
+if message.author.name == "meetowl":
+    print("ughh my boss is bugging me again")
 ```
 
 If you then wanted to reply to that message:
 ```Python
-await message.reply('Hey Boss, I'm still working on those reports.')
+await message.reply("Hey Boss, I'm still working on those reports.")
 ```
 
 Or send a new message to the channel of that message:
 ```Python 
-await message.channel.send('Working hard or hardly working?')
+await message.channel.send("Working hard or hardly working?")
 ```
 
 Or do something only if the message matches a specific string:
 ```Python
-if message.content == 'I need you to work overtime':
-    await message.reply('I quit')
+if message.content == "I need you to work overtime":
+    await message.reply("I quit")
     
-if message.content == 'I've got pizza, how about some overtime?':
-    await message.reply('You don't pay me enough to eat so I'm forced to do overtime.')
+if message.content == "I've got pizza, how about some overtime?":
+    await message.reply("You don't pay me enough to eat so I'm forced to do overtime.")
 ```
 
 You can find a runnable example with all of this [here](https://github.com/swanhack/discord-bots-session/blob/master/examples/Message.py).
@@ -128,15 +137,15 @@ You don't want to be hardcoding messages like above. You can use Python's string
 
 If you want to only act on messages that start with a specific string:
 ```Python
-if message.content.startswith('!time'):
+if message.content.startswith("$time"):
     date_time_now = datetime.now()
-    await message.channel.send(datetime_now)
+    await message.channel.send(date_time_now)
 ```
 
 If you want to only act on messages that contains a specific string:
 ```Python
-if 'burger king' in message.content:
-    await message.reply('Don't say that around me.')
+if "burger king" in message.content:
+    await message.reply("Don't say that around me.")
 ```
 
 If you want to split a string into words (separated by spaces), and iterate through all of them:
