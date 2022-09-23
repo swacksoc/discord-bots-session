@@ -16,7 +16,7 @@ To begin, need to create and register your bot with the swan_hack server.
      - You first define the "scope" of the bot, for this you just need "Bot"
      - You must then define what the bot needs access to. For this basic one, it simply needs "Read Messages/View Channels" and "Send Messages"
      - After you ticked all the boxes, copy the url from the "Generated URL" field, and save it.
-  6. Send the generated URL above to meetowl#3690 (me), I will then notify you when I've added the bot. You should see the bot in the right pane of the `#sandbox` text channel.
+  6. Send the generated URL above to SatanicWomble#9932 (me), I will then notify you when I've added the bot. You should see the bot in the right pane of the `#sandbox` text channel.
 
 ## Setting up your environment
 
@@ -181,9 +181,8 @@ These challenges can take some time but are possible in most languages, includin
   * Now write a help function because you know you'll forget this nonsense!
 
 ## Contributions to swan_hack
-We currently have need for two bots that I can't find the time to write. If you want to get started / improve your GitHub portfolio, or just want to build something that will be used with discord bots, we encourage you to try solving these two issues:
+We currently have need for some bots that we haven't yet written. If you want to get started / improve your GitHub portfolio, or just want to build something that will be used with discord bots, we encourage you to try making something for one of the following:
   * Bot that can manage channels within a category. Specifically for our Miscellaneous category.
-  * Bot that combines all messages from a channel, within a date range, into a text, PDF, DOCX or other file. For a small event we want to run. 
 
 
 
