@@ -2,7 +2,7 @@
 
 Welcome to our Discord Bots session! This session aims to get you to become more comfortable with how discord bots work, and allow you to make one for yourselves.
 
-For those already comfortable, please skip to the final section where we~~can use you for free labour~~ have some challenges for you!
+For those already comfortable, please skip to the final section where we have some challenges for you!
 
 ## Setting up the bot
 
@@ -98,7 +98,7 @@ The message is represented with a Message object. You can access important infor
   
 For example, if you wanted to print a message if a user with a specific name messaged it:
 ```Python
-if message.author.name == 'meetowl':
+if message.author.name == 'SatanicWomble':
     print('ughh my boss is bugging me again')
 ```
 
@@ -181,8 +181,7 @@ These challenges can take some time but are possible in most languages, includin
   * Now write a help function because you know you'll forget this nonsense!
 
 ## Contributions to swan_hack
-We currently have need for some bots that we haven't yet written. If you want to get started / improve your GitHub portfolio, or just want to build something that will be used with discord bots, we encourage you to try making something for one of the following:
-  * Bot that can manage channels within a category. Specifically for our Miscellaneous category.
+We currently don't have any need for more bots but if you can think of something that may be useful, let one of us know. If you just want to build something that may be used by the society, we encourage you to try making something and to give your ideas a go!
 
 
 
