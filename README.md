@@ -2,7 +2,9 @@
 
 Welcome to our Discord Bots session! This session aims to get you to become more comfortable with how discord bots work, and allow you to make one for yourselves.
 
-For those already comfortable, please skip to the final section where we ~~can use you for free labour~~ have some challenges for you!
+
+For those already comfortable, please skip to the final section where we have some challenges for you!
+
 
 ## Setting up the bot
 
@@ -16,7 +18,7 @@ To begin, need to create and register your bot with the swan_hack server.
      - You first define the "scope" of the bot, for this you just need "Bot"
      - You must then define what the bot needs access to. For this basic one, it simply needs "Read Messages/View Channels" and "Send Messages"
      - After you ticked all the boxes, copy the url from the "Generated URL" field, and save it.
-  6. Send the generated URL above to meetowl#3690 (me), I will then notify you when I've added the bot. You should see the bot in the right pane of the `#sandbox` text channel.
+  6. Send the generated URL above to SatanicWomble#9932 (me), I will then notify you when I've added the bot. You should see the bot in the right pane of the `#sandbox` text channel.
 
 ## Setting up your environment
 
@@ -107,8 +109,8 @@ The message is represented with a Message object. You can access important infor
   
 For example, if you wanted to print a message if a user with a specific name messaged it:
 ```Python
-if message.author.name == "meetowl":
-    print("ughh my boss is bugging me again")
+if message.author.name == 'SatanicWomble':
+    print('ughh my boss is bugging me again')
 ```
 
 If you then wanted to reply to that message:
@@ -190,9 +192,7 @@ These challenges can take some time but are possible in most languages, includin
   * Now write a help function because you know you'll forget this nonsense!
 
 ## Contributions to swan_hack
-We currently have need for two bots that I can't find the time to write. If you want to get started / improve your GitHub portfolio, or just want to build something that will be used with discord bots, we encourage you to try solving these two issues:
-  * Bot that can manage channels within a category. Specifically for our Miscellaneous category.
-  * Bot that combines all messages from a channel, within a date range, into a text, PDF, DOCX or other file. For a small event we want to run. 
+We currently don't have any need for more bots but if you can think of something that may be useful, let one of us know. If you just want to build something that may be used by the society, we encourage you to try making something and to give your ideas a go!
 
 
 
