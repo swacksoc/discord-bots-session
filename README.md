@@ -2,7 +2,9 @@
 
 Welcome to our Discord Bots session! This session aims to get you to become more comfortable with how discord bots work, and allow you to make one for yourselves.
 
-For those already comfortable, please skip to the final section where we~~can use you for free labour~~ have some challenges for you!
+
+For those already comfortable, please skip to the final section where we have some challenges for you!
+
 
 ## Setting up the bot
 
@@ -16,7 +18,7 @@ To begin, need to create and register your bot with the swan_hack server.
      - You first define the "scope" of the bot, for this you just need "Bot"
      - You must then define what the bot needs access to. For this basic one, it simply needs "Read Messages/View Channels" and "Send Messages"
      - After you ticked all the boxes, copy the url from the "Generated URL" field, and save it.
-  6. Send the generated URL above to meetowl#3690 (me), I will then notify you when I've added the bot. You should see the bot in the right pane of the `#sandbox` text channel.
+  6. Send the generated URL above to SatanicWomble#9932 (me), I will then notify you when I've added the bot. You should see the bot in the right pane of the `#sandbox` text channel.
 
 ## Setting up your environment
 
@@ -25,7 +27,7 @@ Before you can get to programming, you actually need something to do it with. We
 You will need:
   - A text editor. A commonly suggested one is [Visual Studio Code](https://code.visualstudio.com/), but it really doesn't matter as long as you're comfortable with it. You can use windows notepad, if you're into that kind of thing.
   - Python 3. We will only touch what we need in python, the rest is up to you. Follow the installation documents [here](https://wiki.python.org/moin/BeginnersGuide/Download).
-  - The Pycord library. Once you've installed python, follow [this page](https://docs.pycord.dev/en/master/installing.html) to get it installed. Should be as easy as entering `py -3 -m pip install -U py-cord` in the command prompt.
+  - The Pycord library. Once you've installed python, follow [this page](https://docs.pycord.dev/en/master/installing.html) to get it installed. Should be as easy as entering `py -3 -m pip install -U py-cord` in Windows, or `python3 -m pip install -U py-cord` in others.
   - Once you have everything above, you should be ready to go!
 
 ## Writing your bot
@@ -48,24 +50,33 @@ client = discord.Client()
 # In this case, it simply prints "We have logged in ..." to the terminal.
 @client.event
 async def on_ready():
-    print(f'We have logged in as {client.user}')
+    print(f"We have logged in as {client.user}")
 
 # This function executes whenever the bot has received a new message.
 # This can be a DM or a message in a channel that the bot can see.
 @client.event
 async def on_message(message):
     # If the message starts with $hello, respond with Hello!
-    if message.content.startswith('$hello'):
-        await message.channel.send('Hello!')
+    if message.content.startswith("$hello"):
+        await message.channel.send("Hello!")
 
 # Required to run the bot, make sure to replace <YOUR_API_TOKEN>!
-client.run('<YOUR_API_TOKEN>')
+client.run("<YOUR_API_TOKEN>")
+
+# (we actually recommend you store your token in a file, so that if you ever publish your code you won't publish the token)
 ```
 
-Chuck the above into your text editor, replace `<YOUR_API_TOKEN>` with the token (password) saved earlier, and save it to disk as "firstbot.py". Now, enter the following into a command line or terminal window to run the bot:
-```
-py firstbot.py
-```
+Chuck the above into your text editor, replace `<YOUR_API_TOKEN>` with the token (password) saved earlier, and save it to disk as "firstbot.py". 
+
+Now to run your program, execute the following command:
+  * For Windows:
+    ```
+    py firstbot.py
+    ```
+  * For others
+    ```
+    python firstbot.py
+    ```
 
 Try sending $hello in `#sandbox`!
 
@@ -98,45 +109,45 @@ The message is represented with a Message object. You can access important infor
   
 For example, if you wanted to print a message if a user with a specific name messaged it:
 ```Python
-if message.author.name == 'meetowl':
+if message.author.name == 'SatanicWomble':
     print('ughh my boss is bugging me again')
 ```
 
 If you then wanted to reply to that message:
 ```Python
-await message.reply('Hey Boss, I'm still working on those reports.')
+await message.reply("Hey Boss, I'm still working on those reports.")
 ```
 
 Or send a new message to the channel of that message:
 ```Python 
-await message.channel.send('Working hard or hardly working?')
+await message.channel.send("Working hard or hardly working?")
 ```
 
 Or do something only if the message matches a specific string:
 ```Python
-if message.content == 'I need you to work overtime':
-    await message.reply('I quit')
+if message.content == "I need you to work overtime":
+    await message.reply("I quit")
     
-if message.content == 'I've got pizza, how about some overtime?':
-    await message.reply('You don't pay me enough to eat so I'm forced to do overtime.')
+if message.content == "I've got pizza, how about some overtime?":
+    await message.reply("You don't pay me enough to eat so I'm forced to do overtime.")
 ```
 
-You can find a runnable example with all of this [here](https://github.com/swanhack/discord-bots-session/blob/main/examples/Message.py).
+You can find a runnable example with all of this [here](https://github.com/swanhack/discord-bots-session/blob/master/examples/Message.py).
 
 #### Python Strings
 You don't want to be hardcoding messages like above. You can use Python's strings to make it much more useful and flexible. You can take a quick look at an overview of Python strings [here](https://www.w3schools.com/python/python_strings.asp), and the full list of functions on strings [here](https://www.w3schools.com/python/python_ref_string.asp).
 
 If you want to only act on messages that start with a specific string:
 ```Python
-if message.content.startswith('!time'):
+if message.content.startswith("$time"):
     date_time_now = datetime.now()
-    await message.channel.send(datetime_now)
+    await message.channel.send(date_time_now)
 ```
 
 If you want to only act on messages that contains a specific string:
 ```Python
-if 'burger king' in message.content:
-    await message.reply('Don't say that around me.')
+if "burger king" in message.content:
+    await message.reply("Don't say that around me.")
 ```
 
 If you want to split a string into words (separated by spaces), and iterate through all of them:
@@ -153,7 +164,7 @@ for word in splitMsg[1:]:
     print(f'{word}')
 ```
 
-There are many more things you can do with strings. A runnable example of the above can be found [here](https://github.com/swanhack/discord-bots-session/blob/main/examples/String.py).
+There are many more things you can do with strings. A runnable example of the above can be found [here](https://github.com/swanhack/discord-bots-session/blob/master/examples/String.py).
 
 ### General tips
   * Always put `await` before a discord API call. This is due to how the API works.
@@ -181,9 +192,7 @@ These challenges can take some time but are possible in most languages, includin
   * Now write a help function because you know you'll forget this nonsense!
 
 ## Contributions to swan_hack
-We currently have need for two bots that I can't find the time to write. If you want to get started / improve your GitHub portfolio, or just want to build something that will be used with discord bots, we encourage you to try solving these two issues:
-  * Bot that can manage channels within a category. Specifically for our Miscellaneous category.
-  * Bot that combines all messages from a channel, within a date range, into a text, PDF, DOCX or other file. For a small event we want to run. 
+We currently don't have any need for more bots but if you can think of something that may be useful, let one of us know. If you just want to build something that may be used by the society, we encourage you to try making something and to give your ideas a go!
 
 
 
