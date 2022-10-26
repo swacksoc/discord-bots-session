@@ -18,7 +18,9 @@ To begin, need to create and register your bot with the swan_hack server.
      - You first define the "scope" of the bot, for this you just need "Bot"
      - You must then define what the bot needs access to. For this basic one, it simply needs "Read Messages/View Channels" and "Send Messages"
      - After you ticked all the boxes, copy the url from the "Generated URL" field, and save it.
-  6. Send the generated URL above to SatanicWomble#9932 (me), I will then notify you when I've added the bot. You should see the bot in the right pane of the `#sandbox` text channel.
+
+  6. Go to bot and scroll to "Privlidged Gateway Intents". Tick all the boxes there. This will allow the bot to function as an unverified bot. Remember to save your changes!
+  7. Send the generated URL above to SatanicWomble#9932 (me), I will then notify you when I've added the bot. You should see the bot in the right pane of the `#sandbox` text channel.
 
 ## Setting up your environment
 
