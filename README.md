@@ -20,7 +20,7 @@ To begin, need to create and register your bot with the swan_hack server.
      - After you ticked all the boxes, copy the url from the "Generated URL" field, and save it.
 
   6. Go to bot and scroll to "Privlidged Gateway Intents". Tick all the boxes there. This will allow the bot to function as an unverified bot. Remember to save your changes!
-  7. Send the generated URL above to SatanicWomble#9932 (me), I will then notify you when I've added the bot. You should see the bot in the right pane of the `#sandbox` text channel.
+  7. Send the generated URL above to JerseyStudent (me), I will then notify you when I've added the bot. You should see the bot in the right pane of the `#sandbox` text channel.
 
 ## Setting up your environment
 
