@@ -1,14 +1,14 @@
 # Import the pycord library into your runtime. 
-import discord
+import disnake
 from datetime import datetime
 
-client = discord.Client()
+bot = disnake.Client()
 
-@client.event
+@bot.event
 async def on_ready():
-    print(f'We have logged in as {client.user}')
+    print(f'We have logged in as {bot.user}')
 
-@client.event
+@bot.event
 async def on_message(message):
     if message.author.bot:
         return
@@ -26,4 +26,4 @@ async def on_message(message):
             await message.channel.send(word)
 
 # Required to run the bot, make sure to replace <YOUR_API_TOKEN>!
-client.run('<YOUR_API_TOKEN>')
+bot.run('<YOUR_API_TOKEN>')

@@ -20,16 +20,16 @@ To begin, need to create and register your bot with the swan_hack server.
      - After you ticked all the boxes, copy the url from the "Generated URL" field, and save it.
 
   6. Go to bot and scroll to "Privlidged Gateway Intents". Tick all the boxes there. This will allow the bot to function as an unverified bot. Remember to save your changes!
-  7. Send the generated URL above to SatanicWomble#9932 (me), I will then notify you when I've added the bot. You should see the bot in the right pane of the `#sandbox` text channel.
+  7. Send the generated URL above to JerseyStudent (me), I will then notify you when I've added the bot. You should see the bot in the right pane of the `#sandbox` text channel.
 
 ## Setting up your environment
 
-Before you can get to programming, you actually need something to do it with. We will be using Python 3 with the [Pycord library](https://pycord.dev/), but don't get intimidated if you're not familiar, that's the point of this session!
+Before you can get to programming, you actually need something to do it with. We will be using Python 3 with the [Pycord library](https://docs.disnake.dev/en/stable/), but don't get intimidated if you're not familiar, that's the point of this session!
 
 You will need:
   - A text editor. A commonly suggested one is [Visual Studio Code](https://code.visualstudio.com/), but it really doesn't matter as long as you're comfortable with it. You can use windows notepad, if you're into that kind of thing.
   - Python 3. We will only touch what we need in python, the rest is up to you. Follow the installation documents [here](https://wiki.python.org/moin/BeginnersGuide/Download).
-  - The Pycord library. Once you've installed python, follow [this page](https://docs.pycord.dev/en/master/installing.html) to get it installed. Should be as easy as entering `py -3 -m pip install -U py-cord` in Windows, or `python3 -m pip install -U py-cord` in others.
+  - The Disnake library. Once you've installed python, follow [this page](https://docs.disnake.dev/en/stable/intro.html) to get it installed. Should be as easy as entering `py -3 -m pip install -U disnake` in Windows, or `python3 -m pip install -U disnake` in others.
   - Once you have everything above, you should be ready to go!
 
 ## Writing your bot
@@ -38,32 +38,32 @@ Now for the fun part, actually making the bot do something!
 
 ### Basic Example 
 
-Let's take apart the following modified example from [the official quickstart guide](https://docs.pycord.dev/en/master/quickstart.html). 
+Let's take apart the following modified example from [the official quickstart guide](https://docs.disnake.dev/en/stable/quickstart.html). 
 ```Python
-# Import the pycord library into your runtime. 
-import discord
+# Import the disnake library into your runtime. 
+import disnake
 
 # Assign the discord client to an object, we call client.
 # All discord actions will act on this variable.
-client = discord.Client()
+bot = disnake.Client()
 
 # This is a function.
-# It executes whenever the bot has successfully initialised. 
+# It executes whenever the bot has succesfully initialised. 
 # In this case, it simply prints "We have logged in ..." to the terminal.
-@client.event
+@bot.event
 async def on_ready():
-    print(f"We have logged in as {client.user}")
+    print(f'We have logged in as {bot.user}')
 
 # This function executes whenever the bot has received a new message.
 # This can be a DM or a message in a channel that the bot can see.
-@client.event
+@bot.event
 async def on_message(message):
     # If the message starts with $hello, respond with Hello!
-    if message.content.startswith("$hello"):
-        await message.channel.send("Hello!")
+    if message.content.startswith('$hello'):
+        await message.channel.send('Hello!')
 
 # Required to run the bot, make sure to replace <YOUR_API_TOKEN>!
-client.run("<YOUR_API_TOKEN>")
+bot.run('<YOUR_API_TOKEN>')
 
 # (we actually recommend you store your token in a file, so that if you ever publish your code you won't publish the token)
 ```
@@ -83,7 +83,7 @@ Now to run your program, execute the following command:
 Try sending $hello in `#sandbox`!
 
 ### Important Mechanisms
-The basic example had a simple response to a simple message. This is nice, but we'd like to make it do something more useful. The following sections go over some of the important mechanisms in the Pycord API.
+The basic example had a simple response to a simple message. This is nice, but we'd like to make it do something more useful. The following sections go over some of the important mechanisms in the Disnake API.
 
 #### Safety 
 The bot's `on_message` function activates on _every_ message, including those from other bots and itself. It's best to design precautions of this into the start of the function.
