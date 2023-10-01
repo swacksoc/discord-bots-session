@@ -19,12 +19,12 @@ To begin, need to create and register your bot with the swan_hack server.
      - You must then define what the bot needs access to. For this basic one, it simply needs "Read Messages/View Channels" and "Send Messages"
      - After you ticked all the boxes, copy the url from the "Generated URL" field, and save it.
 
-  6. Go to bot and scroll to "Privlidged Gateway Intents". Tick all the boxes there. This will allow the bot to function as an unverified bot. Remember to save your changes!
+  6. Go to bot and scroll to "Privileged Gateway Intents". Tick all the boxes there. This will allow the bot to function as an unverified bot. Remember to save your changes!
   7. Send the generated URL above to JerseyStudent (me), I will then notify you when I've added the bot. You should see the bot in the right pane of the `#sandbox` text channel.
 
 ## Setting up your environment
 
-Before you can get to programming, you actually need something to do it with. We will be using Python 3 with the [Pycord library](https://docs.disnake.dev/en/stable/), but don't get intimidated if you're not familiar, that's the point of this session!
+Before you can get to programming, you actually need something to do it with. We will be using Python 3 with the [Disnake library](https://docs.disnake.dev/en/stable/), but don't get intimidated if you're not familiar, that's the point of this session!
 
 You will need:
   - A text editor. A commonly suggested one is [Visual Studio Code](https://code.visualstudio.com/), but it really doesn't matter as long as you're comfortable with it. You can use windows notepad, if you're into that kind of thing.
